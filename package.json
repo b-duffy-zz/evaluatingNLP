@@ -1,0 +1,36 @@
+{
+  "name": "evaluatingnlp",
+  "version": "1.0.0",
+  "description": "Creating a site that evaluates an article with natural language processing for a Udacity class project. ",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node": "^16.1.0",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.4",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "sass-loader": "^11.1.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/index.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+  },
+  "author": "Brendan Duffy",
+  "license": "ISC"
+}
