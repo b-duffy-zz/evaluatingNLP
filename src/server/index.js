@@ -3,8 +3,6 @@ dotenv.config();
 
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
-
 const app = express()
 
 /* Dependencies */
@@ -26,21 +24,22 @@ app.listen(8001, function () {
     console.log('Example app listening on port 8001!')
 })
 
-app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('../src/client/views/index.html'))
-})
 
-app.post('/process', processLanguage) 
+// Creating endpoints
 
-const processLanguage = async (baseURL, key, lang) {
+const projectData = {};
 
-    let baseURL = "https://api.meaningcloud.com/sentiment-2.1";
-    let key = process.env.API_KEY;
-    let lang = "lang=en";
+//GET route
 
-    let response = await fetch('${baseURL}?${key}&${lang}');
-    let langData = await response.json;
-    console.log(langData);
-    return langData;
-}
+app.get('/all', function (req, res){
+    res.send(projectData);
+  });
+
+//POST route
+
+let data = [];
+
+app.post('/process', function(req, res){
+    data.push(req.body);
+    projectData["newEntry"] = data;
+});
