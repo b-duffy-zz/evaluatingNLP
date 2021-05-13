@@ -22,16 +22,25 @@ app.use(express.static('dist'))
 console.log(__dirname)
 
 // designates what port the app will listen to for incoming requests
-app.listen(8000, function () {
-    console.log('Example app listening on port 8000!')
+app.listen(8001, function () {
+    console.log('Example app listening on port 8001!')
 })
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile(path.resolve('../src/client/views/index.html'))
 })
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+app.post('/process', processLanguage) 
 
+const processLanguage = async (baseURL, key, lang) {
+
+    let baseURL = "https://api.meaningcloud.com/sentiment-2.1";
+    let key = process.env.API_KEY;
+    let lang = "lang=en";
+
+    let response = await fetch('${baseURL}?${key}&${lang}');
+    let langData = await response.json;
+    console.log(langData);
+    return langData;
+}
