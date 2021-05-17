@@ -1,1 +1,0 @@
-(()=>{"use strict";document.querySelector("#process").addEventListener("click",(e=>{e.preventDefault();let t=document.getElementById("articleURL").value;console.log(t),fetch("http://localhost:8001/process",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:t})})})),alert("I EXIST")})();

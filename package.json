@@ -4,10 +4,12 @@
   "description": "Creating a site that evaluates an article with natural language processing for a Udacity class project. ",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "node": "^16.1.0",
+    "node-fetch": "^2.6.1",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0"
   },
@@ -19,7 +21,6 @@
     "css-loader": "^5.2.4",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
-    "node-fetch": "^2.6.1",
     "node-sass": "^6.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "sass-loader": "^11.1.1",
