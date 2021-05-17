@@ -8,6 +8,5 @@ alert("I EXIST")
 
 export {
     processLanguage,
-    getData,
     updateUI
 }
