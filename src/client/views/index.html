@@ -19,9 +19,10 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form>
+                    <label for="articleURL">Article to process:</label><br>
+                    <input type="text" id="articleURL" name="articleURL" value="" placeholder="Please enter a URL"><br>
+                    <button id="process" type="submit">Process article</button>
                 </form>
             </section>
 

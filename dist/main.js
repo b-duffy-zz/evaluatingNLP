@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log((function(e){console.log("::: Running checkForName :::",e),["Picard","Janeway","Kirk","Archer","Georgiou"].includes(e)&&alert("Welcome, Captain!")})),alert("I EXIST")})();
+(()=>{"use strict";document.querySelector("#process").addEventListener("click",(e=>{e.preventDefault();let t=document.getElementById("articleURL").value;console.log(t),fetch("http://localhost:8001/process",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:t})})})),alert("I EXIST")})();

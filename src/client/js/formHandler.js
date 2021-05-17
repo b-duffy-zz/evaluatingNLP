@@ -1,54 +1,21 @@
-document.querySelector('#process').addEventListener("click", performAction);
+import { response } from "express";
 
-function performAction(){
-    processLanguage(baseURL, key, article)
-    .then(function(newData){
-        postData('/process', {
-            temp: newData.main.temp,
-            feelings: feelings.value,
-            date: date
-        })
+const processLanguage = async (event) => {
+    event.preventDefault();
+
+    let url = document.getElementById('articleURL').value;
+    console.log(url);
+    //put in URL validation here
+    await fetch('http://localhost:8001/process', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({url: url})
+        .then(response => response.json())
+        .then(() => console.log(response))
     })
-    .then(() => getData('/all'))
-    .then(() => updateUI());
 };
 
-let article = document.getElementById('article-url');
-
-const processLanguage = async (baseURL, key, article) => {
-
-    let baseURL = "https://api.meaningcloud.com/sentiment-2.1";
-    let key = process.env.API_KEY;
-    let lang = "lang=en";
-
-    let response = await fetch('${baseURL}?${key}&${article}${lang}');
-    let langData = response.json;
-    console.log(langData);
-    return langData;
-}
-
-//POST data to server
-const postData = async (url = '', data = {}) => {
-    console.log(data);
-    const response = await fetch(url, {
-    method: 'POST', 
-    credentials: 'same-origin',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data), 
-  });
-
-  try {
-    const newData = await response.json();
-    console.log(newData);
-  } catch(error) {
-  console.log("error", error)
-  }
-};
-
-
-//GET data from server
 const getData = async (url='') => {
     const request = await fetch(url);
     try {
@@ -60,6 +27,10 @@ const getData = async (url='') => {
         console.log("error",error);
     }
 };
+
+//change this to perform action once update UI works
+document.querySelector('#process').addEventListener("click", processLanguage);
+
 
 //Update the UI with server info
 const updateUI = async () => {
@@ -76,8 +47,6 @@ const updateUI = async () => {
     }
   };
 
-export { performAction }
 export { processLanguage }
 export { getData }
-export { postData }
 export { updateUI }
