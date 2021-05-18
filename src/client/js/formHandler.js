@@ -22,9 +22,11 @@ const processLanguage = (event) => {
     console.log("Error: Please enter a URL")
 }};
 
-//change this to perform action once update UI works
-document.querySelector('#process').addEventListener("click", processLanguage);
+let articleSubmit = document.querySelector('#process');
 
+if (articleSubmit) {
+    articleSubmit.addEventListener("click", processLanguage)
+};
 
 export { processLanguage }
 export { updateUI }

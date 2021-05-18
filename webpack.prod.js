@@ -37,13 +37,17 @@ module.exports = {
                 }
             ]
     },
-    plugins: [
-        new HtmlWebPackPlugin({
-            template: "./src/client/views/index.html",
-            filename: "./index.html",
-            favicon: "./src/client/styles/assets/favicon.ico"
-        }),
-        new MiniCssExtractPlugin({filename: '[name].css'}),
-        new WorkboxPlugin.GenerateSW()
-    ]
+            plugins: [
+                new HtmlWebPackPlugin({
+                    template: "./src/client/views/index.html",
+                    filename: "./index.html",
+                    favicon: "./src/client/styles/assets/favicon.ico"
+                }),
+                new MiniCssExtractPlugin({filename: '[name].css'}),
+                new WorkboxPlugin.GenerateSW()
+            ],
+            output:{
+                libraryTarget: 'var',
+                library: 'Client'
+            }
 }
