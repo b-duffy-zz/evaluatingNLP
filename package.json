@@ -4,6 +4,7 @@
   "description": "Creating a site that evaluates an article with natural language processing for a Udacity class project. ",
   "main": "index.js",
   "dependencies": {
+    "babel-jest": "^26.6.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^9.0.2",
