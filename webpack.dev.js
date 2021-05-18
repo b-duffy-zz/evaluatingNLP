@@ -19,10 +19,25 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader' ]
-            }
-        ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+                use: {
+                    loader: 'file-loader'
+                }
+              },
+              {
+                test: /\.(woff|woff2|ttf|eot|svg)$/,
+                use: {
+                    loader: 'url-loader'
+                }},
+                {
+                test: /\.html$./,
+                use: {
+                    loader: 'html-loader' }
+                }
+            ]
     },
-
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",

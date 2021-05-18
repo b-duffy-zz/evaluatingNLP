@@ -1,0 +1,44 @@
+/* balsamiq-sans-regular - latin */
+@font-face {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('./assets/fonts/balsamiq-sans-v3-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./assets/fonts/balsamiq-sans-v3-latin-regular.svg#BalsamiqSans') format('svg'); /* Legacy iOS */
+}
+/* balsamiq-sans-italic - latin */
+@font-face {
+  font-family: 'Balsamiq Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('./assets/fonts/balsamiq-sans-v3-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./assets/fonts/balsamiq-sans-v3-latin-italic.svg#BalsamiqSans') format('svg'); /* Legacy iOS */
+}
+/* balsamiq-sans-700 - latin */
+@font-face {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('./assets/fonts/balsamiq-sans-v3-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./assets/fonts/balsamiq-sans-v3-latin-700.svg#BalsamiqSans') format('svg'); /* Legacy iOS */
+}
+/* balsamiq-sans-700italic - latin */
+@font-face {
+  font-family: 'Balsamiq Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local(''),
+       url('./assets/fonts/balsamiq-sans-v3-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-700italic.woff') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/balsamiq-sans-v3-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./assets/fonts/balsamiq-sans-v3-latin-700italic.svg#BalsamiqSans') format('svg'); /* Legacy iOS */
+}

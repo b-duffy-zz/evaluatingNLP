@@ -17,14 +17,31 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
-            }
-        ]
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+                use: {
+                    loader: 'file-loader'
+                }
+              },
+              {
+                test: /\.(woff|woff2|ttf|eot|svg)$/,
+                use: {
+                    loader: 'url-loader'
+                }},
+                {
+                test: /\.html$./,
+                use: {
+                    loader: 'html-loader' }
+                }
+            ]
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
+            favicon: "./src/client/styles/assets/favicon.ico"
         }),
         new MiniCssExtractPlugin({filename: '[name].css'}),
         new WorkboxPlugin.GenerateSW()
