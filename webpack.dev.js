@@ -36,5 +36,10 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         })
-    ]
+    ],
+    devServer:{
+        port: 8001,
+        inline: true,
+        hot: true
+    }
 }
