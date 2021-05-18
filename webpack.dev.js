@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
@@ -17,11 +18,26 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-            }
-        ]
+                use: ['style-loader', 'css-loader', 'sass-loader' ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+                use: {
+                    loader: 'file-loader'
+                }
+              },
+              {
+                test: /\.(woff|woff2|ttf|eot|svg)$/,
+                use: {
+                    loader: 'url-loader'
+                }},
+                {
+                test: /\.html$./,
+                use: {
+                    loader: 'html-loader' }
+                }
+            ]
     },
-
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
@@ -36,5 +52,10 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         })
-    ]
+    ],
+    devServer:{
+        port: 3001,
+        inline: true,
+        hot: true
+    }
 }

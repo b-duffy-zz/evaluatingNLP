@@ -1,11 +1,12 @@
 import {updateUI} from './updateUI'
+import {urlChecker} from './urlChecker'
 
 const processLanguage = (event) => {
     event.preventDefault();
 
     let url = document.getElementById('articleURL').value;
-    console.log(url);
     //put in URL validation here
+    if (urlChecker(url)) {
      fetch('http://localhost:8001/process', {
         method: 'POST',
         credentials: 'same-origin',
@@ -17,7 +18,9 @@ const processLanguage = (event) => {
         console.log(response)
         updateUI(response)
     })
-};
+} else {
+    console.log("Error: Please enter a URL")
+}};
 
 //change this to perform action once update UI works
 document.querySelector('#process').addEventListener("click", processLanguage);

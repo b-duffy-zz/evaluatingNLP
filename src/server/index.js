@@ -19,17 +19,6 @@ app.listen(8001, function () {
     console.log('Example app listening on port 8001!')
 })
 
-
-// Creating endpoints
-
-let projectData = {};
-
-//GET route
-
-app.get('/all', function (req, res){
-    res.send(projectData);
-  });
-
 //POST route
 const key = process.env.API_KEY;
 

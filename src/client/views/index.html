@@ -2,43 +2,49 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>Article Processor</title>
+        <link href="../styles/favicon.ico" rel="icon">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
 
     <body>
-
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
-
+        <header></header>
         <main>
-            <section>
-                <form>
-                    <label for="articleURL">Article to process:</label><br>
-                    <input type="text" id="articleURL" name="articleURL" value="" placeholder="Please enter a URL"><br>
-                    <button id="process" type="submit">Process article</button>
-                </form>
-            </section>
-
-            <section>
-                <strong>Results</strong>
-                <div id="results">
-                    <div id="subjectivityHolder"></div>    
-                    <div id="agreementHolder"></div>    
-                    <div id="ironyHolder"></div>    
-                    <div id="confidenceHolder"></div>    
-                </div>
-            </section>
+            <div id="main-container">
+                <h1>Natural Language Processing Project</h1>
+                <section>
+                    <h2>Article Processing: Sentiment Analysis</h2>
+                    <p>Enter a URL below to run a Sentiment Analysis on an article. The Sentiment Analysis will detect the article's subjectivity, agreement, irony, and level of confidence.</p>
+                </section>
+                <section>
+                    <form>
+                        <label for="articleURL">Article to process:</label><br>
+                        <input type="text" id="articleURL" name="articleURL" value="" placeholder="Please enter a URL"><br>
+                        <button id="process" type="submit">Process article</button>
+                    </form>
+                    <div id="results">
+                    <h3>Results</h3>
+                        <div id="subjectivityHolder"></div>    
+                        <div id="agreementHolder"></div>    
+                        <div id="ironyHolder"></div>    
+                        <div id="confidenceHolder"></div>    
+                    </div>
+                </section>
+            </div>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>Made by Brendan Duffy, 2021</p>
         </footer>
-
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+           </script>
     </body>
 </html>
